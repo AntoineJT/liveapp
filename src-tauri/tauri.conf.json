@@ -40,7 +40,7 @@
       {
         "label": "main",
         "title": "Discord LiveApp",
-        "url": "src/index.html",
+        "url": "index.html",
         "fullscreen": false,
         "resizable": true,
         "decorations": false,
