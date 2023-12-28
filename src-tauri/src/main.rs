@@ -27,13 +27,20 @@ fn main() {
                 .expect("unable to get current monitor (step 2)");
             let monitor_size = monitor2.size();
 
-            // TODO remove taskbar size from workarea
-            let new_width = compute_default_width(monitor_size.width);
-            let new_height = monitor_size.height;
-            let new_size = PhysicalSize::new(new_width, new_height);
+            window.maximize().expect("unable to maximize window");
+            let max_win_size = window.inner_size()
+                .expect("unable to find window size");
+            let max_win_pos = window.inner_position()
+                .expect("unable to find window position");
 
+            let new_width = compute_default_width(monitor_size.width);
+            let new_height = max_win_size.height;
+            let new_size = PhysicalSize::new(new_width, new_height);
+ 
             let new_x = monitor_size.width - new_width;
-            let new_position = PhysicalPosition::new(new_x, 0);
+            let new_y = max_win_pos.y.try_into()
+                .expect("negative y position for window");
+            let new_position = PhysicalPosition::new(new_x, new_y);
 
             window.set_size(new_size)
                 .expect("unable to resize window");
