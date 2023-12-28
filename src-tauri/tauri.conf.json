@@ -46,12 +46,14 @@
     },
     "windows": [
       {
+        "label": "main",
         "title": "Discord LiveApp",
         "url": "src/index.html",
         "fullscreen": false,
         "resizable": true,
-        "center": true,
         "decorations": false,
+        "visible": false,
+        "alwaysOnTop": true,
         "width": 800,
         "height": 600
       }
