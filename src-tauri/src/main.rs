@@ -3,6 +3,11 @@
 
 use tauri::{Manager, PhysicalSize, PhysicalPosition, Window};
 
+/// Compute main window default width.
+/// 
+/// Default width = screen_width / 5 (min: 300)
+/// If screen_width / 5 is lesser than 300 then
+/// return 300.
 fn compute_default_width(max_width: u32) -> u32 {
     const MIN_WIDTH: u32 = 300;
     
@@ -14,12 +19,21 @@ fn compute_default_width(max_width: u32) -> u32 {
     }
 }
 
-///
+/// Compute main window default height.
+/// 
+/// Default height = screen_height - taskbar_height.
+/// 
+/// WARN: This function maximizes window!
+fn compute_default_height(window: &Window) -> u32 {
+    hack_maximize_to_get_max_size(window).height
+}
+
 /// Maximize window and get its inner size.
 /// This is a workaround to the fact that we can't get the taskbar
 /// height for now in tauri.
 /// See: https://github.com/tauri-apps/tauri/issues/6592
-///
+/// 
+/// WARN: This function maximizes window!
 fn hack_maximize_to_get_max_size(window: &Window) -> PhysicalSize<u32> {
     window.maximize().expect("unable to maximize window");
 
@@ -40,10 +54,8 @@ fn main() {
                 .expect("unable to get current monitor (step 2)");
             let monitor_size = monitor2.size();
 
-            let window_max_size = hack_maximize_to_get_max_size(&window);
-
             let new_width = compute_default_width(monitor_size.width);
-            let new_height = window_max_size.height;
+            let new_height = compute_default_height(&window);
             let new_size = PhysicalSize::new(new_width, new_height);
 
             let new_x = monitor_size.width - new_width;
