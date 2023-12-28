@@ -3,6 +3,17 @@
 
 use tauri::{Manager, PhysicalSize, PhysicalPosition};
 
+fn compute_default_width(max_width: u32) -> u32 {
+    const MIN_WIDTH: u32 = 300;
+    
+    let wanted_width = f64::from(max_width) / 5.0;
+    if wanted_width >= f64::from(MIN_WIDTH) {
+        wanted_width.floor() as u32
+    } else {
+        MIN_WIDTH
+    }
+}
+
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
@@ -17,12 +28,7 @@ fn main() {
             let monitor_size = monitor2.size();
 
             // TODO remove taskbar size from workarea
-            let wanted_width = f64::from(monitor_size.width) / 5.0;
-            let new_width = if wanted_width >= 300.0 {
-                wanted_width.floor() as u32
-            } else {
-                300
-            };
+            let new_width = compute_default_width(monitor_size.width);
             let new_height = monitor_size.height;
             let new_size = PhysicalSize::new(new_width, new_height);
 
