@@ -48,18 +48,19 @@ fn main() {
             let window = handle.get_window("main")
                 .expect("error while getting main window");
 
-            let monitor = window.current_monitor()
+            let opt_monitor = window.current_monitor()
                 .expect("unable to get current monitor (step 1)");
-            let monitor2 = monitor
+            let monitor = opt_monitor
                 .expect("unable to get current monitor (step 2)");
-            let monitor_size = monitor2.size();
+            let monitor_size = monitor.size();
 
             let new_width = compute_default_width(monitor_size.width);
             let new_height = compute_default_height(&window);
             let new_size = PhysicalSize::new(new_width, new_height);
 
             let new_x = monitor_size.width - new_width;
-            let new_position = PhysicalPosition::new(new_x, 0);
+            const TOP_RIGHT: u32 = 0;
+            let new_position = PhysicalPosition::new(new_x, TOP_RIGHT);
 
             window.set_size(new_size)
                 .expect("unable to resize window");
