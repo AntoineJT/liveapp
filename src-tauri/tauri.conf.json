@@ -16,6 +16,17 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": false,
+        "show": false,
+        "maximize": false,
+        "minimize": true,
+        "unmaximize": false,
+        "unminimize": false,
+        "startDragging": true
       }
     },
     "bundle": {
