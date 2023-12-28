@@ -15,21 +15,16 @@ fn compute_default_width(max_width: u32) -> u32 {
 }
 
 ///
-/// Maximize window and get its inner size and inner position.
-/// This gives us a "workarea" thing.
-/// This is a workaround to the fact that we can't get the taskbar 
+/// Maximize window and get its inner size.
+/// This is a workaround to the fact that we can't get the taskbar
 /// height for now in tauri.
-/// It was suggested in this issue: https://github.com/tauri-apps/tauri/issues/6592
+/// See: https://github.com/tauri-apps/tauri/issues/6592
 ///
-fn hack_maximize_workarea(window: &Window) -> (PhysicalSize<u32>, PhysicalPosition<i32>) {
+fn hack_maximize_to_get_max_size(window: &Window) -> PhysicalSize<u32> {
     window.maximize().expect("unable to maximize window");
 
-    let max_win_size = window.inner_size()
-        .expect("unable to find window size");
-    let max_win_pos = window.inner_position()
-        .expect("unable to find window position");
-
-    (max_win_size, max_win_pos)
+    window.inner_size()
+        .expect("unable to find window size")
 }
 
 fn main() {
@@ -45,17 +40,14 @@ fn main() {
                 .expect("unable to get current monitor (step 2)");
             let monitor_size = monitor2.size();
 
-            let (workarea_size, workarea_position) 
-                = hack_maximize_workarea(&window);
+            let window_max_size = hack_maximize_to_get_max_size(&window);
 
             let new_width = compute_default_width(monitor_size.width);
-            let new_height = workarea_size.height;
+            let new_height = window_max_size.height;
             let new_size = PhysicalSize::new(new_width, new_height);
 
             let new_x = monitor_size.width - new_width;
-            let new_y = workarea_position.y.try_into()
-                .expect("negative y position for window");
-            let new_position = PhysicalPosition::new(new_x, new_y);
+            let new_position = PhysicalPosition::new(new_x, 0);
 
             window.set_size(new_size)
                 .expect("unable to resize window");
