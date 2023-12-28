@@ -35,10 +35,12 @@
     },
     "windows": [
       {
-        "fullscreen": false,
-        "resizable": true,
         "title": "Discord LiveApp",
         "url": "src/index.html",
+        "fullscreen": false,
+        "resizable": true,
+        "center": true,
+        "decorations": false,
         "width": 800,
         "height": 600
       }

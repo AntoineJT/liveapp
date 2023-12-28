@@ -1,54 +1,31 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/src/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
-    <script type="module" src="/src/main.ts" defer></script>
-    <style>
-      .logo.vite:hover {
-        filter: drop-shadow(0 0 2em #747bff);
-      }
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="A frontend for the WidgetBot discord bot">
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+		<title>Live App</title>
+		<script type="module" src="titlebar.js"></script>
+	</head>
 
-      .logo.typescript:hover {
-        filter: drop-shadow(0 0 2em #2d79c7);
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <h1>Welcome to Tauri!</h1>
-
-      <div class="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/src/assets/vite.svg" class="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img
-            src="/src/assets/tauri.svg"
-            class="logo tauri"
-            alt="Tauri logo"
-          />
-        </a>
-        <a href="https://www.typescriptlang.org/docs" target="_blank">
-          <img
-            src="/src/assets/typescript.svg"
-            class="logo typescript"
-            alt="typescript logo"
-          />
-        </a>
-      </div>
-
-      <p>Click on the Tauri logo to learn more about the framework</p>
-
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-
-      <p id="greet-msg"></p>
-    </div>
-  </body>
+	<body>
+		<div class="titlebar">
+			<a>Live App — Read The Docs</a>
+			<div class="buttons">
+				<div id="minimize">
+					<img src="assets/fontawesome5/minimize.svg" alt="minimize window">
+				</div>
+				<div id="close">
+					<img src="assets/fontawesome5/close.svg" alt="close window">
+				</div>
+			</div>
+		</div>
+		<widgetbot 
+			server="238975753969074177" 
+			channel="718795219369328661">
+		</widgetbot>
+		<script src="thirdparty/widgetbot_html-embed.js"></script>
+	</body>
 </html>
