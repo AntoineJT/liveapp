@@ -7,17 +7,17 @@ function Titlebar() {
     const close = () => appWindow.close().catch(console.error);
  
     return (
-        <div data-tauri-drag-region className="titlebar">
-            <a data-tauri-drag-region>Live App</a>
-            <div className="buttons">
+        <header data-tauri-drag-region className="titlebar">
+            <h1 data-tauri-drag-region>Live App</h1>
+            <section className="buttons">
                 <button id="minimize" onClick={minimize}>
                     <img src="src/assets/fontawesome5/minimize.svg" alt="minimize window" />
                 </button>
                 <button id="close" onClick={close}>
                     <img src="src/assets/fontawesome5/close.svg" alt="close window" />
                 </button>
-            </div>
-        </div>);
+            </section>
+        </header>);
 }
 
 export default Titlebar;

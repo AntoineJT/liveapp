@@ -9,10 +9,11 @@
     background-color: rgba(32, 34, 37, 1);
 }
 
-.titlebar a
+.titlebar h1
 {
     width: calc(100vw - 60px);
     font-size: 14px;
+    font-weight: normal;
     height: 100%;
     display: flex;
     margin-left: 10px;
