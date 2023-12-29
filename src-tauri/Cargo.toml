@@ -1,10 +1,10 @@
 [package]
-name = "discord-liveapp"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
+name = "liveapp"
+version = "0.3.2-PORT"
+description = "LiveApp"
+authors = ["Antoine James Tournepiche"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/AntoineJT/liveapp"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
