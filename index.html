@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="A frontend for the WidgetBot discord bot">
-		<link rel="stylesheet" href="src/style.css">
-		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-		<title>Live App</title>
-		<script type="module" src="src/titlebar.ts"></script>
-		<script type="module" src="src/version.ts"></script>
-		<script type="module" src="src/thirdparty/widgetbot_html-embed.js"></script>
-	</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <title>Live App</title>
+  </head>
 
-	<body>
-		<div data-tauri-drag-region class="titlebar">
-			<a data-tauri-drag-region>Live App</a>
-			<div class="buttons">
-				<div id="minimize">
-					<img src="src/assets/fontawesome5/minimize.svg" alt="minimize window">
-				</div>
-				<div id="close">
-					<img src="src/assets/fontawesome5/close.svg" alt="close window">
-				</div>
-			</div>
-		</div>
-		<widgetbot 
-			server="238975753969074177" 
-			channel="718795219369328661">
-		</widgetbot>
-	</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
