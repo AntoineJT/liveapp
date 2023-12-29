@@ -27,12 +27,14 @@
     align-items: center;
 }
 
-.titlebar .buttons div
+.titlebar .buttons button
 {
+    background: none;
+    border: none;
     -webkit-app-region: no-drag;
 }
 
-.titlebar .buttons div img
+.titlebar .buttons button img
 {
     min-width: 20px;
     max-width: 20px;

@@ -10,12 +10,12 @@ function Titlebar() {
         <div data-tauri-drag-region className="titlebar">
             <a data-tauri-drag-region>Live App</a>
             <div className="buttons">
-                <div id="minimize" onClick={minimize}>
+                <button id="minimize" onClick={minimize}>
                     <img src="src/assets/fontawesome5/minimize.svg" alt="minimize window" />
-                </div>
-                <div id="close" onClick={close}>
+                </button>
+                <button id="close" onClick={close}>
                     <img src="src/assets/fontawesome5/close.svg" alt="close window" />
-                </div>
+                </button>
             </div>
         </div>);
 }
