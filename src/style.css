@@ -25,7 +25,7 @@ body
 
 .titlebar a
 {
-    width: calc(100vw - 60px);
+    width: calc(100vw - 100px);
     font-size: 14px;
     height: 100%;
     display: flex;
@@ -35,7 +35,7 @@ body
 
 .titlebar .buttons
 {
-    width: 50px;
+    width: 90px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -56,7 +56,7 @@ body
     filter: invert(100%) sepia(1%) saturate(7495%) hue-rotate(226deg) brightness(119%) contrast(100%);
 }
 
-#minimize 
+#minimize
 {
     overflow: hidden;
     min-width: 15px;
