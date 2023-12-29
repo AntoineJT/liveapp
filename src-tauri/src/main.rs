@@ -41,42 +41,32 @@ fn hack_maximize_to_get_max_size(window: &Window) -> PhysicalSize<u32> {
         .expect("unable to find window size")
 }
 
-fn adjust_window(window: &Window) {
-    window.hide().expect("unable to hide main window");
-
-    let opt_monitor = window.current_monitor()
-        .expect("unable to get current monitor (step 1)");
-    let monitor = opt_monitor
-        .expect("unable to get current monitor (step 2)");
-    let monitor_size = monitor.size();
-
-    let new_width = compute_default_width(monitor_size.width);
-    let new_height = compute_default_height(&window);
-    let new_size = PhysicalSize::new(new_width, new_height);
-
-    let new_x = monitor_size.width - new_width;
-    const TOP_RIGHT: u32 = 0;
-    let new_position = PhysicalPosition::new(new_x, TOP_RIGHT);
-
-    window.set_size(new_size)
-        .expect("unable to resize window");
-    window.set_position(new_position)
-        .expect("unable to move window");
-    
-    window.show().expect("unable to show window");
-}
-
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
             let handle = app.app_handle();
             let window = handle.get_window("main")
                 .expect("error while getting main window");
-    
-            adjust_window(&window);
 
-            // TODO find a solution
-            // window.listen("adjust", |event| adjust_window(&window));
+            let opt_monitor = window.current_monitor()
+                .expect("unable to get current monitor (step 1)");
+            let monitor = opt_monitor
+                .expect("unable to get current monitor (step 2)");
+            let monitor_size = monitor.size();
+
+            let new_width = compute_default_width(monitor_size.width);
+            let new_height = compute_default_height(&window);
+            let new_size = PhysicalSize::new(new_width, new_height);
+
+            let new_x = monitor_size.width - new_width;
+            const TOP_RIGHT: u32 = 0;
+            let new_position = PhysicalPosition::new(new_x, TOP_RIGHT);
+
+            window.set_size(new_size)
+                .expect("unable to resize window");
+            window.set_position(new_position)
+                .expect("unable to move window");
+            window.show().expect("unable to show window");
 
             Ok(())
         })

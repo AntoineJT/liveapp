@@ -7,4 +7,3 @@ The following images can be found on [Font Awesome](https://fontawesome.com), li
 Here are the original links to the bundled icons:
 - [Close](https://fontawesome.com/icons/times?style=solid)
 - [Minimize](https://fontawesome.com/icons/window-minimize?style=regular)
-- [Adjust](https://fontawesome.com/icons/up-right-and-down-left-from-center?f=classic&s=solid)
