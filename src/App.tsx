@@ -1,6 +1,6 @@
+import './App.css';
 import Titlebar from './components/Titlebar/Titlebar';
 import WidgetBot from '@widgetbot/react-embed';
-import './App.css';
 
 function App() {
   const READ_THE_DOCS_SERVER = '238975753969074177';
