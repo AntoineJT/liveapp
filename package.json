@@ -2,6 +2,10 @@
   "name": "liveapp",
   "private": true,
   "version": "0.4.0-DEV",
+  "homepage": "https://github.com/AntoineJT/liveapp",
+  "bugs": "https://github.com/AntoineJT/liveapp/issues",
+  "license": "GPL-3.0-or-later",
+  "author": "Antoine James Tournepiche",
   "type": "module",
   "scripts": {
     "dev": "vite",
