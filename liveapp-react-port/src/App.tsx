@@ -1,5 +1,9 @@
+import Titlebar from "./components/Titlebar/Titlebar";
+
 function App() {
-  return <></>;
+  return <>
+    <Titlebar></Titlebar>
+  </>;
 }
 
 export default App;
