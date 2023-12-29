@@ -7,7 +7,7 @@ In other words, it is an always on top application, allowing to do some other th
 
 **The primary purpose of this app is to be used while streaming live, on discord!**
 
-*This application is a rewrite of the [old and heavy electron app from readthedocs-fr organization](https://github.com/readthedocs-fr/liveapp).*
+_This application is a rewrite of the [old and heavy electron app from readthedocs-fr organization](https://github.com/readthedocs-fr/liveapp)._
 
 ## How to use
 
@@ -31,6 +31,6 @@ This application is licensed under the [GPLv3 or later](LICENSE).
 
 ## Screenshot
 
-*To be added later*
+_To be added later_
 
 Antoine James Tournepiche
