@@ -1430,7 +1430,7 @@ checksum = "c4cd1a83af159aa67994778be9070f0ae1bd732942279cabb14f86f986a21456"
 
 [[package]]
 name = "liveapp"
-version = "0.3.2-PORT"
+version = "0.4.0-DEV"
 dependencies = [
  "serde",
  "serde_json",
