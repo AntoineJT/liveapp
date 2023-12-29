@@ -1,11 +1,17 @@
 import './App.css';
+import { DiscordConfigurationContext } from './contexts/DiscordConfigurationContext';
+import MainPage from './pages/MainPage/MainPage';
+import ConfigView from './views/ConfigView/ConfigView';
 import MainView from './views/MainView/MainView';
-
-const READ_THE_DOCS_SERVER = '238975753969074177';
-const CHAT_CHANNEL = '718795219369328661';
+import { useContext } from 'react';
 
 function App() {
-  return <MainView server={READ_THE_DOCS_SERVER} channel={CHAT_CHANNEL} />;
+  const discordConfiguration = useContext(DiscordConfigurationContext);
+
+  const emptyConfig = discordConfiguration.channel == null || discordConfiguration.server == null;
+  const view = emptyConfig ? <ConfigView /> : <MainView />;
+
+  return <MainPage>{view}</MainPage>;
 }
 
 export default App;

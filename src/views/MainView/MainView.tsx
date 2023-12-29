@@ -1,16 +1,15 @@
 import Titlebar from '../../components/Titlebar/Titlebar';
+import { DiscordConfigurationContext } from '../../contexts/DiscordConfigurationContext';
 import WidgetBot from '@widgetbot/react-embed';
+import { useContext } from 'react';
 
-interface MainViewProps {
-  server: string;
-  channel: string;
-}
+function MainView() {
+  const discordConfiguration = useContext(DiscordConfigurationContext);
 
-function MainView({ server, channel }: MainViewProps) {
   return (
     <>
       <Titlebar />
-      <WidgetBot className="widgetbot" server={server} channel={channel} />
+      <WidgetBot className="widgetbot" server={discordConfiguration.server} channel={discordConfiguration.channel} />
     </>
   );
 }
