@@ -5,5 +5,6 @@ The following images can be found on [Font Awesome](https://fontawesome.com), li
 **No changes were made**.
 
 Here are the original links to the bundled icons:
+
 - [Close](https://fontawesome.com/icons/times?style=solid)
 - [Minimize](https://fontawesome.com/icons/window-minimize?style=regular)
