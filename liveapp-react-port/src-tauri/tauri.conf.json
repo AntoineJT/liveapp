@@ -3,24 +3,28 @@
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
-    "distDir": "../dist"
+    "distDir": "../dist",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "liveapp-react-port",
-    "version": "0.0.0"
+    "version": "0.4.0-DEV"
   },
   "tauri": {
     "allowlist": {
-      "all": false,
       "shell": {
-        "all": false,
         "open": true
+      },
+      "window": {
+        "close": true,
+        "minimize": true,
+        "startDragging": true
       }
     },
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.antoinejt.liveapp",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -30,13 +34,18 @@
       ]
     },
     "security": {
-      "csp": null
+      "csp": "default-src 'self'; script-src 'self'; frame-src https://e.widgetbot.io/; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:;"
     },
     "windows": [
       {
+        "label": "main",
+        "title": "LiveApp",
+        "url": "index.html",
         "fullscreen": false,
         "resizable": true,
-        "title": "liveapp-react-port",
+        "decorations": false,
+        "visible": false,
+        "alwaysOnTop": true,
         "width": 800,
         "height": 600
       }
