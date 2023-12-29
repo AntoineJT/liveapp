@@ -7,8 +7,8 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "discord-liveapp",
-    "version": "0.0.0"
+    "productName": "liveapp",
+    "version": "0.4.0-DEV"
   },
   "tauri": {
     "allowlist": {
@@ -39,7 +39,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Discord LiveApp",
+        "title": "LiveApp",
         "url": "index.html",
         "fullscreen": false,
         "resizable": true,
