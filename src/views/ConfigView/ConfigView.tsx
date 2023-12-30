@@ -10,7 +10,7 @@ const CHAT_CHANNEL = '718795219369328661';
 function ConfigView() {
   const discordConfiguration = useContext(DiscordConfigurationContext);
 
-  function update(event: FormEvent<any>) {
+  function update(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const target = event.target as typeof event.target & {
