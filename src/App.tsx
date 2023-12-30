@@ -10,10 +10,8 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <main>
-        <Titlebar />
-        <WidgetBot className="widgetbot" server={READ_THE_DOCS_SERVER} channel={CHAT_CHANNEL} />
-      </main>
+      <Titlebar />
+      <WidgetBot className="widgetbot" server={READ_THE_DOCS_SERVER} channel={CHAT_CHANNEL} />
     </>
   );
 }
