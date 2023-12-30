@@ -10,14 +10,13 @@
 }
 
 .titlebar h1 {
-  width: calc(100vw - 60px);
+  width: 100vw;
   font-size: 14px;
   font-weight: normal;
   display: flex;
 }
 
 .titlebar .buttons {
-  width: 50px;
   display: flex;
   justify-content: space-around;
 }
