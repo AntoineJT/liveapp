@@ -7,10 +7,10 @@ function App() {
   const CHAT_CHANNEL = '718795219369328661';
 
   return (
-    <>
+    <main>
       <Titlebar />
       <WidgetBot className="widgetbot" server={READ_THE_DOCS_SERVER} channel={CHAT_CHANNEL} />
-    </>
+    </main>
   );
 }
 
