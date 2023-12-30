@@ -20,9 +20,9 @@ function Titlebar() {
       <Typography data-tauri-drag-region component="h1">
         Live App v{version}
       </Typography>
-      <ButtonGroup>
-        <Minimize onClick={minimize} sx={{ cursor: 'pointer' }} />
-        <Close onClick={close} sx={{ cursor: 'pointer' }} />
+      <ButtonGroup sx={{ cursor: 'pointer' }}>
+        <Minimize onClick={minimize} />
+        <Close onClick={close} />
       </ButtonGroup>
     </header>
   );
