@@ -29,8 +29,15 @@ function ConfigView() {
 
   return (
     <form onSubmit={update}>
-      <TextField name="server" label="Server" value={READ_THE_DOCS_SERVER} variant="filled" sx={style} />
-      <TextField name="channel" label="Channel" value={CHAT_CHANNEL} variant="filled" sx={style} />
+      <TextField
+        required
+        name="server"
+        label="Server"
+        defaultValue={READ_THE_DOCS_SERVER}
+        variant="outlined"
+        sx={style}
+      />
+      <TextField required name="channel" label="Channel" defaultValue={CHAT_CHANNEL} variant="outlined" sx={style} />
       <Button type="submit">OK</Button>
     </form>
   );
