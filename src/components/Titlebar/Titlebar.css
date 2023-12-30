@@ -15,9 +15,3 @@
   font-weight: normal;
   font-size: 0.875rem;
 }
-
-.titlebar .buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}

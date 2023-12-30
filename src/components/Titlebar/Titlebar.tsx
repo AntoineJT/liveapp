@@ -1,6 +1,6 @@
 import './Titlebar.css';
 import { Close, Minimize } from '@mui/icons-material';
-import { Typography } from '@mui/material';
+import { ButtonGroup, Typography } from '@mui/material';
 import { getVersion } from '@tauri-apps/api/app';
 import { appWindow } from '@tauri-apps/api/window';
 import { useEffect, useState } from 'react';
@@ -20,10 +20,10 @@ function Titlebar() {
       <Typography data-tauri-drag-region component="h1">
         Live App v{version}
       </Typography>
-      <section className="buttons">
+      <ButtonGroup>
         <Minimize onClick={minimize} sx={{ cursor: 'pointer' }} />
         <Close onClick={close} sx={{ cursor: 'pointer' }} />
-      </section>
+      </ButtonGroup>
     </header>
   );
 }
