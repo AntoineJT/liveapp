@@ -11,7 +11,7 @@
 
 .titlebar h1 {
   width: 100vw;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: normal;
   display: flex;
 }
