@@ -6,6 +6,7 @@
   color: white;
   background-color: rgba(32, 34, 37, 1);
   align-items: center;
+  padding-left: 4vw;
 }
 
 .titlebar h1 {
@@ -13,7 +14,6 @@
   font-size: 14px;
   font-weight: normal;
   display: flex;
-  margin-left: 4vw;
 }
 
 .titlebar .buttons {
