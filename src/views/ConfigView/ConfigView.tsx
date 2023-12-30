@@ -22,11 +22,6 @@ function ConfigView() {
     discordConfiguration.setChannel(target.channel.value);
   }
 
-  const style = {
-    'background-color': 'white',
-    'margin-top': '2vh',
-  };
-
   return (
     <form onSubmit={update}>
       <TextField
@@ -34,10 +29,17 @@ function ConfigView() {
         name="server"
         label="Server"
         defaultValue={READ_THE_DOCS_SERVER}
+        helperText="Ex: 238975753969074177 (RTD)"
         variant="outlined"
-        sx={style}
       />
-      <TextField required name="channel" label="Channel" defaultValue={CHAT_CHANNEL} variant="outlined" sx={style} />
+      <TextField
+        required
+        name="channel"
+        label="Channel"
+        defaultValue={CHAT_CHANNEL}
+        helperText="Ex: 718795219369328661 (RTD's #chat)"
+        variant="outlined"
+      />
       <Button type="submit">OK</Button>
     </form>
   );
