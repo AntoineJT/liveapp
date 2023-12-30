@@ -3,7 +3,7 @@
   -webkit-app-region: drag;
   display: flex;
   width: 100vw;
-  height: 30px;
+  height: 5vh;
   color: white;
   background-color: rgba(32, 34, 37, 1);
 }
