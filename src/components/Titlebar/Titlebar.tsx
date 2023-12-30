@@ -1,4 +1,5 @@
 import './Titlebar.css';
+import { Close, Minimize } from '@mui/icons-material';
 import { getVersion } from '@tauri-apps/api/app';
 import { appWindow } from '@tauri-apps/api/window';
 import { useEffect, useState } from 'react';
@@ -17,12 +18,8 @@ function Titlebar() {
     <header data-tauri-drag-region className="titlebar">
       <h1 data-tauri-drag-region>Live App v{version}</h1>
       <section className="buttons">
-        <button id="minimize" onClick={minimize}>
-          <img src="src/assets/fontawesome5/minimize.svg" alt="minimize window" />
-        </button>
-        <button id="close" onClick={close}>
-          <img src="src/assets/fontawesome5/close.svg" alt="close window" />
-        </button>
+        <Minimize onClick={minimize} />
+        <Close onClick={close} />
       </section>
     </header>
   );

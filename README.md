@@ -27,7 +27,7 @@ This application is licensed under the [GPLv3 or later](LICENSE).
 
 ## Credits
 
-- [Some images](src/assets/fontawesome5) from [Font Awesome](https://fontawesome.com). See credits [here](src/assets/fontawesome5/README.md).
+_To do later_
 
 ## Screenshot
 
