@@ -3,6 +3,7 @@ import Titlebar from './components/Titlebar/Titlebar';
 import { DiscordConfigurationContext } from './contexts/DiscordConfigurationContext';
 import ConfigView from './views/ConfigView/ConfigView';
 import MainView from './views/MainView/MainView';
+import { CssBaseline } from '@mui/material';
 import { useState } from 'react';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <>
+      <CssBaseline />
       <DiscordConfigurationContext.Provider value={{ server, setServer, channel, setChannel }}>
         <Titlebar />
         {view}
