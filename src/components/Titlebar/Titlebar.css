@@ -1,23 +1,23 @@
 .titlebar {
-  display: flex;
   width: 100vw;
   height: 5vh;
+  padding-left: 4vw;
+  display: flex;
+  align-items: center;
   color: white;
   background-color: rgba(32, 34, 37, 1);
-  align-items: center;
-  padding-left: 4vw;
 }
 
 .titlebar h1 {
-  font-family: 'Ubuntu';
   width: 100vw;
-  font-size: 0.875em;
-  font-weight: normal;
   display: flex;
+  font-family: 'Ubuntu';
+  font-weight: normal;
+  font-size: 0.875em;
 }
 
 .titlebar .buttons {
   display: flex;
-  justify-content: space-around;
   flex-direction: row;
+  justify-content: space-around;
 }
