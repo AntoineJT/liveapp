@@ -1,6 +1,5 @@
 .titlebar {
   font-family: 'Ubuntu';
-  -webkit-app-region: drag;
   display: flex;
   width: 100vw;
   height: 5vh;
