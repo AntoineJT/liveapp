@@ -1,17 +1,23 @@
 import './App.css';
+import Titlebar from './components/Titlebar/Titlebar';
 import { DiscordConfigurationContext } from './contexts/DiscordConfigurationContext';
-import MainPage from './pages/MainPage/MainPage';
+import {  useState } from 'react';
 import ConfigView from './views/ConfigView/ConfigView';
 import MainView from './views/MainView/MainView';
-import { useContext } from 'react';
 
 function App() {
-  const discordConfiguration = useContext(DiscordConfigurationContext);
+  const [server, setServer] = useState("");
+  const [channel, setChannel] = useState("");
 
-  const emptyConfig = discordConfiguration.channel == null || discordConfiguration.server == null;
-  const view = emptyConfig ? <ConfigView /> : <MainView />;
+  const emptyConfig = channel === "" || server === "";
+  const view = (emptyConfig ? <ConfigView /> : <MainView />)
 
-  return <MainPage>{view}</MainPage>;
+  return <>
+    <DiscordConfigurationContext.Provider value={{server, setServer, channel, setChannel}}>
+      <Titlebar/>
+      {view}
+    </DiscordConfigurationContext.Provider> 
+  </>;
 }
 
 export default App;
