@@ -1,5 +1,6 @@
 import './App.css';
 import Titlebar from './components/Titlebar/Titlebar';
+import { CssBaseline } from '@mui/material';
 import WidgetBot from '@widgetbot/react-embed';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 
   return (
     <>
+      <CssBaseline />
       <Titlebar />
       <WidgetBot className="widgetbot" server={READ_THE_DOCS_SERVER} channel={CHAT_CHANNEL} />
     </>

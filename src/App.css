@@ -1,17 +1,4 @@
-*,
-*::before,
-*::after {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: rgb(54, 57, 63);
-}
-
 .widgetbot {
-  width: 100vw;
-  height: calc(100vh - 30px);
-  border-radius: 0px;
+  height: 95vh;
+  border-radius: unset !important;
 }
