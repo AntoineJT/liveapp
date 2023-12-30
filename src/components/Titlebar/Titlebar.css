@@ -1,5 +1,4 @@
 .titlebar {
-  font-family: 'Ubuntu';
   display: flex;
   width: 100vw;
   height: 5vh;
@@ -10,6 +9,7 @@
 }
 
 .titlebar h1 {
+  font-family: 'Ubuntu';
   width: 100vw;
   font-size: 0.875em;
   font-weight: normal;
