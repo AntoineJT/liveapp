@@ -18,8 +18,8 @@ function Titlebar() {
     <header data-tauri-drag-region className="titlebar">
       <h1 data-tauri-drag-region>Live App v{version}</h1>
       <section className="buttons">
-        <Minimize onClick={minimize} />
-        <Close onClick={close} />
+        <Minimize onClick={minimize} sx={{ cursor: 'pointer' }} />
+        <Close onClick={close} sx={{ cursor: 'pointer' }} />
       </section>
     </header>
   );
