@@ -1,5 +1,5 @@
 import TextField from '@mui/material/TextField';
-import { useContext, useState } from 'react';
+import { FormEvent, useContext } from 'react';
 import { DiscordConfigurationContext } from '../../contexts/DiscordConfigurationContext';
 import { Button } from '@mui/material';
 
@@ -9,18 +9,22 @@ const CHAT_CHANNEL = '718795219369328661';
 function ConfigView() {
   const discordConfiguration = useContext(DiscordConfigurationContext);
 
-  const [server, setServer] = useState("")
-  const [channel, setChannel] = useState("")
+  function update(event: FormEvent<any>) {
+    event.preventDefault();
 
-  function update() {
-    discordConfiguration.setServer(server);
-    discordConfiguration.setChannel(channel);
+    const target = event.target as typeof event.target & {
+      server: { value: string };
+      channel: { value: string };
+    };
+
+    discordConfiguration.setServer(target.server.value);
+    discordConfiguration.setChannel(target.channel.value);
   }
 
-  return <form onSubmit={(event) => update}>
-    <TextField label="Server" value={READ_THE_DOCS_SERVER} onChange={(event) => setServer(event.target.value)}></TextField>
-    <TextField label="Channel" value={CHAT_CHANNEL} onChange={(event) => setChannel(event.target.value)}></TextField>
-    <Button>OK</Button>
+  return <form onSubmit={update}>
+    <TextField name="server" label="Server" value={READ_THE_DOCS_SERVER} />
+    <TextField name="channel" label="Channel" value={CHAT_CHANNEL} />
+    <Button type="submit">OK</Button>
   </form>;
 }
 
