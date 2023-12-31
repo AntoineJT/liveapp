@@ -1,6 +1,6 @@
 import { DiscordConfigurationContext } from '../../contexts/DiscordConfigurationContext';
 import './ConfigView.css';
-import { Button } from '@mui/material';
+import { Button, Divider, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { FormEvent, useContext } from 'react';
 
@@ -23,25 +23,32 @@ function ConfigView() {
   }
 
   return (
-    <form onSubmit={update}>
-      <TextField
-        required
-        name="server"
-        label="Server"
-        defaultValue={READ_THE_DOCS_SERVER}
-        helperText="Ex: 238975753969074177 (RTD)"
-        variant="outlined"
-      />
-      <TextField
-        required
-        name="channel"
-        label="Channel"
-        defaultValue={CHAT_CHANNEL}
-        helperText="Ex: 718795219369328661 (RTD's #chat)"
-        variant="outlined"
-      />
-      <Button type="submit">OK</Button>
-    </form>
+    <main>
+      <img src="/logo.png" alt="app logo" />
+      <Divider />
+      <Typography className="configTitle" variant="h6" component="h2">
+        Discord configuration
+      </Typography>
+      <form onSubmit={update}>
+        <TextField
+          required
+          name="server"
+          label="Server"
+          defaultValue={READ_THE_DOCS_SERVER}
+          helperText="Ex: 238975753969074177 (RTD)"
+          variant="outlined"
+        />
+        <TextField
+          required
+          name="channel"
+          label="Channel"
+          defaultValue={CHAT_CHANNEL}
+          helperText="Ex: 718795219369328661 (RTD's #chat)"
+          variant="outlined"
+        />
+        <Button type="submit">OK</Button>
+      </form>
+    </main>
   );
 }
 
