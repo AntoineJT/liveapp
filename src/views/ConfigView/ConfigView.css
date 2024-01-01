@@ -6,7 +6,7 @@ main {
 
 .configTitle {
   text-align: center;
-  padding-top: 1vh;
+  padding-top: 2vh;
 }
 
 main img {
@@ -20,5 +20,5 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2vh;
+  gap: 3vh;
 }
