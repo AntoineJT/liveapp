@@ -6,6 +6,7 @@ main {
 
 .configTitle {
   text-align: center;
+  padding-top: 1vh;
 }
 
 main img {
@@ -15,7 +16,7 @@ main img {
 }
 
 form {
-  padding: 5vh 5vw;
+  padding: 3vh 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;

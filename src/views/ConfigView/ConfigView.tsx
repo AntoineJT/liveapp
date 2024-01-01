@@ -26,7 +26,7 @@ function ConfigView() {
     <main>
       <img src="/logo.png" alt="app logo" />
       <Divider />
-      <Typography className="configTitle" variant="h6" component="h2">
+      <Typography component="h2" className="configTitle" variant="h6" fontFamily="Ubuntu">
         Discord configuration
       </Typography>
       <form onSubmit={update}>
@@ -46,7 +46,9 @@ function ConfigView() {
           helperText="Ex: 718795219369328661 (RTD's #chat)"
           variant="outlined"
         />
-        <Button type="submit">OK</Button>
+        <Button type="submit" variant="contained">
+          OK
+        </Button>
       </form>
     </main>
   );
