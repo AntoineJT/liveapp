@@ -1,17 +1,25 @@
 import './App.css';
 import Titlebar from './components/Titlebar/Titlebar';
+import { DiscordConfigurationContext } from './contexts/DiscordConfigurationContext';
+import ConfigView from './views/ConfigView/ConfigView';
+import MainView from './views/MainView/MainView';
 import { CssBaseline } from '@mui/material';
-import WidgetBot from '@widgetbot/react-embed';
+import { useState } from 'react';
 
 function App() {
-  const READ_THE_DOCS_SERVER = '238975753969074177';
-  const CHAT_CHANNEL = '718795219369328661';
+  const [server, setServer] = useState('');
+  const [channel, setChannel] = useState('');
+
+  const emptyConfig = channel === '' || server === '';
+  const view = emptyConfig ? <ConfigView /> : <MainView />;
 
   return (
     <>
       <CssBaseline />
-      <Titlebar />
-      <WidgetBot className="widgetbot" server={READ_THE_DOCS_SERVER} channel={CHAT_CHANNEL} />
+      <DiscordConfigurationContext.Provider value={{ server, setServer, channel, setChannel }}>
+        <Titlebar />
+        {view}
+      </DiscordConfigurationContext.Provider>
     </>
   );
 }

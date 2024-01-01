@@ -1,0 +1,24 @@
+main {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.configTitle {
+  text-align: center;
+  padding-top: 2vh;
+}
+
+main img {
+  object-fit: contain;
+  image-rendering: revert;
+  padding: 2vh 25vw;
+}
+
+form {
+  padding: 3vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3vh;
+}
