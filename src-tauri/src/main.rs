@@ -1,7 +1,9 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::{Manager, PhysicalSize, PhysicalPosition, Window};
+use std::{fs::File, path::PathBuf};
+
+use tauri::{Manager, PhysicalSize, PhysicalPosition, Window, App};
 
 /// Compute main window default width.
 /// 
@@ -41,9 +43,27 @@ fn hack_maximize_to_get_max_size(window: &Window) -> PhysicalSize<u32> {
         .expect("unable to find window size")
 }
 
+fn create_config_file(app: &App) {
+    let config_dir = create_config_folder(&app);
+    let config_file_path = config_dir.join("config.json");
+    print!("{}", config_file_path.display());
+    let _config_file = File::create(&config_file_path).expect("Unable to create config.json file");
+}
+
+fn create_config_folder(app: &App) -> PathBuf {
+    let config_dir = app.path_resolver().app_config_dir().expect("Unable to find config dir");
+    let exists = config_dir.try_exists().expect("Unable to check existence of config folder");
+    if !exists {
+        let _ = std::fs::create_dir_all(&config_dir).expect("Unable to create config folder");
+    }
+    config_dir
+}
+
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
+            create_config_file(&app);
+
             let handle = app.app_handle();
             let window = handle.get_window("main")
                 .expect("error while getting main window");
