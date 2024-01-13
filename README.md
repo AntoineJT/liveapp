@@ -27,7 +27,10 @@ This application is licensed under the [GPLv3 or later](LICENSE).
 
 ## Credits
 
-_To do later_
+Thank to:
+
+- [Shika](https://github.com/shika-blyat) for the original idea and implementation
+- [Oseryx](https://github.com/Oseryx) for contributions to the previous app
 
 ## Screenshot
 
