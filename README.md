@@ -11,6 +11,12 @@ _This application is a rewrite of the [old and heavy electron app from readthedo
 
 ## How to use
 
+This application uses [WidgetBot](https://widgetbot.io/) to get information from discord.
+
+Follow their instructions on how to use it to configure the app.
+
+You'll need the server id & channel id to configure it.
+
 You can download the latest release from [here](https://github.com/AntoineJT/liveapp/releases).
 
 ## How to build
