@@ -31,6 +31,6 @@ _To do later_
 
 ## Screenshot
 
-_To be added later_
+![Application Main View](./.github/images/app.png)
 
 Antoine James Tournepiche
